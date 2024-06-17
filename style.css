@@ -1,0 +1,180 @@
+/* existem outros meios de selecionar uma tag no html para que possamos manipular seu estilo em C# */
+/* para conseguir usar uma classe, e assim selecionar exatamente um ponto específico no código em HTML que se deseja atribuir um estilo, dentro da tag html é necessário adicionar a palavra class="nomedaclasse" E dentro do código CSS você coloca o "." e o nome da classe que voc~E escreveu no HTML*/
+/*vh ou viewport é uma porção de área visível, utilizada como unudiade de medida aqui em CSS para cirar páginas na Web 100% responsivas, ou seja, para adequar os elemenots na tela para o tamanho do device utilizado pelo usuário, podendo ser um pc, um celular, tablet ou televisão. */
+/* text decoration:none tira o sublinhado do texto escrito na âncora a*/
+/* 1 rem = pixel/16.  16píxels = 1rem */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #F6F6F6;
+    --cor-terciaria: #22D4FD;
+    --cor-hover: #272727;
+
+    --fonte-primaria: "Krona One", sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 13%;
+}
+
+.cabecalho__menu{
+    display:flex;
+    gap: 80px;
+}
+.cabecalho__menu__link {
+    font-family: var(--fonte-secundaria);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+.Titulo-principal {
+    color:var(--cor-terciaria);
+}
+
+.apresentacao {
+    /* O padding é o elemento responsável por definir a distância entre um conteúdo e suas bordas. */
+    padding: 4% 13%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+}
+
+.apresentacao__conteudo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2.063rem;
+    font-family: var(--fonte-primaria);
+}
+
+.apresentacao__conteudo__paragrafo{
+    font-size: 1.5rem;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+.apresentacao__links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.apresentacao__links__subtitulo {
+  font-family: var(--fonte-primaria);
+  font-weight: 400;
+  font-size: 1.313rem;
+}
+.apresentacao__links__navegacao {
+   /* background-color: #22D4FD;  */
+    display: flex; /* display flex cria um flex box q deixa o texto todo na horizontal, por padrão.*/
+    justify-content: center; /* justify-content: center; Vai fazer com que o texto dentro do botão fique alinhado ao centro */
+    gap: 16px; /* gap de 16px cria um espacinho de 16 píxels entre os conteúdos que estiverem dentro do botão, no caso são um texto e um ícone */
+    border: 2px solid var(--cor-terciaria); /* Limita uma borda para o botão de espessura de 2 píxels e cor verde água.*/
+    width: 50%; /* tamanho do botão*/
+    text-align: center;
+    border-radius: 20px;
+    font-size: 1.375rem;
+    font-weight: 600;
+    padding: 15px 0;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+}
+
+
+/* a palavra hover, indica para a máquina que quando o cursor do mouse passar por cima de uma sessão específica no html, a estilização dessa sessão vai mudar. */
+
+.apresentacao__links__link:hover {
+
+    background-color: var(--cor-hover);
+
+}
+
+span {
+    color: #ff0000;
+    padding: 10px;
+}
+
+/* A imagem está dentro da tag main "apresentação", o que significa que é uma tag filho, e "apresentação" é a tag pai. Então para a porcentagem de tamanho definida aqui, na verdade seria relativo ao tamanho total da tag pai. Logo se a tag pai tivesse um tamanho máximo de 50% e aqui na estilização colocassemos 100% a imagem ocuparia 100% da área de 50% do elemento pai. */
+.apresentacao__imagem{
+
+        width: 20%;
+        border-radius: 3%;
+        border-bottom: #F6F6F6;
+
+}
+
+.rodape {
+    margin-top: 29%;
+    padding: 20px;
+    align-items: end;
+    justify-content: end;
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+
+/* O @media é uma query que usamos para definir que algo aconteça em alguma situação específica. Nesse caso estamos reordenando o conteúdo conforme o tamnaho do dispositivo. Pode-se também adicionar mais de uma query para outros tipos de dispositivo. */
+
+/* Para separar uma faixa de valores em que determinada estilização deve ocorrer, é só fazer assim:
+@media (min-width:480px) and (max-width: 800px) {
+    Código a ser executado.
+} */
+
+
+/* Verifica uma condição, se o max-width for menor do que estiver no parêntesis, executa o código dentro da chaves */
+@media screen and (max-width: 900px) {
+
+    .cabecalho {
+        /*  Quando forem dois valores expressos apenas no padding:display: 1º - Espaço igual superior e inferior; 2º espaço igual entre as laterais. */
+        padding: 8%
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse;
+        gap: 3.75rem;
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo {
+        /* A propriedade width: auto faz o elemento ".apresentacao__conteudo" preencher todo o espaço do elemento pai "apresentacao", no caso, a largura corresponderia a todo o padding definido anteriormente. É útil quando se deseja que o elemento filho se ajuste automaticamente ao elemento-pai sem ultrapassar os limites do pai. */
+        /* Usar width: 100vw; Faria com que ele ignorasse as dimensões do elemento pai e ultrapassasse os limites denifinidos por ele,fazendo com que o conteúdo sobre pelas laterais. */
+        width: auto;
+        gap: 7px;
+
+    }
+
+
+}

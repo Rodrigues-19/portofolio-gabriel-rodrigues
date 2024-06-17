@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- A tag section separa o box geral da página criando outro box, que nesse caso, engloba todo o conteúdo da página que está entre a tag h1 e button. -->
+<!-- A tag main é chamada de "elemento pai" e tudo que está dentro dela são elementos filhos. Essa relação é prorposta por hierarquia dos termos e tambpem por um aspecto visual, sendo que os filhos comumente ficam um pouco mais à direita em baixo do elemento pai. -->
+<!-- A tag div é usada comumente para agrupar elementos, servindo como um container. Essa tag não possui valor semântico como as tags main (conteúdo principal), header(cabeçalho) e footer(rodapé). As tags div permitem uma organização do código html, o que permite uma melhora na manipulação de elementos específicos em CSS também -->
+
+<body>
+    <header class = "cabecalho"> <!-- NO header, temos a tag nav que são os menús do site-->
+        <nav class = "cabecalho__menu">
+            <a class="cabecalho__menu__link" href="index.html">Home</a>
+            <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+        </nav>
+    </header>
+    <main class="apresentacao">
+        <section class="apresentacao__conteudo">  <!--A tag section é usada para organização do código. Essa tag agrupa lógicamente os elementos, afim de facilitar para um leitor do código oque ele está analisando-->
+            <h1 class="apresentacao__conteudo__titulo"><strong class="Titulo-principal">Hello Devs!</strong> Bem vindos ao meu Portfólio.</h1>
+            <p class="apresentacao__conteudo__paragrafo">Olá! Sou Gabriel Rodrigues, aspirante em programação. Estou aprendendo <span> C#, CSS, JavaScript e HTMl</span> com a Alura. Estou aberto a propostas de trabalho e ajudar outros desenvolvedores! Vem falar comigo, é só clicar nos botões abaixo</p>
+            <div class="apresentacao__links">
+                <h2 class="apresentacao__links__subtitulo">Acesse minhas Redes!</h2>
+                <a class="apresentacao__links__navegacao" href="https://www.instagram.com/_rodriguess18_/">Instagram
+                    <img src="instagram.png" alt="ícone Instagram">
+                 </a> 
+                <a class="apresentacao__links__navegacao" href="https://github.com/Rodrigues-19">Github
+                    <img src="github.png" alt="Ícone Github">
+                </a>
+            </div>
+        </section>
+        <img class="apresentacao__imagem" src="Criador_da_pagina.jpg" alt="Foto criador da página">  
+    </main>
+    <footer class="rodape">
+        <p>Copyright 2024 - Gabriel Rodrigues. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html> 
+<!-- comando CTRL + k + c ativa o modo de comentários sem que seja necessário determinar os limites do comentário. -->
